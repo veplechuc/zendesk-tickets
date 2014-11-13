@@ -8,6 +8,7 @@
     "body-parser": "^1.6.3",
     "eventstore-client": "kunzimariano/eventstore-client",
     "mocha": "^1.21.5",
+    "nconf": "^0.6.9",
     "node-zendesk": "0.0.18",
     "proxyquire": "^1.0.1",
     "request": "^2.44.0",

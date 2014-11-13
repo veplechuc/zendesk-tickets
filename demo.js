@@ -1,11 +1,12 @@
 var zd = require('node-zendesk'),
     fs = require('fs');
+    nconf =  require('nconf')
 
 var client = zd.createClient({
   debug:     true,
   username:  'developer-support@versionone.com',
-  password:  'sJ5Z&VjZ',
-  remoteUri: 'https://versiononesupport.zendesk.com/agent/'
+  token:     nconf.get('zendeskToken'),
+  remoteUri: 'https://remote.zendesk.com/api/v2'
 });
 
 //verify connection
@@ -16,6 +17,7 @@ client.users.auth(function (err, res, result) {
   }
   console.log(JSON.stringify(result.verified, null, 2, true));
 });
+
 
 // client.users.list(function (err, req, result) {
 //    if (err) {
